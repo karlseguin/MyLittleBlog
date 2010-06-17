@@ -1,0 +1,36 @@
+h2. My Little BLog
+
+This code is my first actual Rails project, and powers my personal blog at www.openmymind.net. Hopefully it'll
+prove useful to others looking to learn Rails. I'd appreciate feedback and tips since I'm sure, despite its simplicity,
+that I'm doing stuff wrong.
+
+h3. Configuration
+
+You'll want to copy config.yml.example to config.yml and provide it with your specific settings. The hash password of "test" is:
+ee26b0dd4af7e749aa1a8ee3c10ae9923f618980772e473f8819a5d4940e0db27ac185f8a0e1d5f84f88bc887fd67b143732c304cc5fa9ad8e6f57f50028a8ff
+
+h3. Deployment
+
+I use capistrano to manage deployment. config/deploy.rb is in .gitignore since I wasn't sure how to share the file (since it has a lot of specific stuff).
+
+This is mostly what my deploy.rb file looks like:
+
+pre. set :application, "Karl Seguin's Blog"
+set :repository,  "git://github.com/karlseguin/MyLittleBlog.git"
+set :scm, :git
+set :branch, 'master'
+ssh_options[:forward_agent] = true
+set :deploy_via, :remote_cache
+set :deploy_to, "/srv/www/openmymind/"
+role :web, "openmymind.net"
+role :app, "openmymind.net"
+role :db,  "openmymind.net", :primary => true
+after 'deploy:update_code', 'deploy:updated_code'
+namespace :deploy do
+  task :updated_code do
+    run "cp #{deploy_to}/shared/public/* #{release_path}/public/"
+    run "chown -R www-data:www-data #{release_path}"
+    run "touch #{deploy_to}current/tmp/restart.txt"
+    run "ln -nfs #{deploy_to}/shared/config/config.yml #{release_path}/config/config.yml"
+  end
+end
