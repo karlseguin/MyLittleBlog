@@ -8,7 +8,7 @@ class AuthenticatedController < ApplicationController
   end
   
   def do_login
-    if params[:username].downcase != Configuration.admin_user || Digest::SHA512.hexdigest(params[:password]) != Configuration.admin_password
+    if params[:username].downcase != Configuration.admin_username || Digest::SHA512.hexdigest(params[:password]) != Configuration.admin_password
       redirect_to :action => 'login' and return
     end
     session[:user] = params[:username]
