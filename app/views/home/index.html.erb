@@ -1,0 +1,15 @@
+<% content_for :meta do%>A software developer with a passion for technology and craftsmanship; trying to lead a simple and conscientious life.<% end -%>
+<% @posts.each do |p| %>
+  <div class="section">
+    <h1><%= link_to_post(p)%></h1>
+    <div class="date"><%= p.created_at.to_formatted_s(:pretty)%></div>
+    <div class="summary"><%= p.summary %></div>
+  </div>
+<% end %>
+
+<% if @has_previous %>
+  <a href="/<%=@category%>/<%=@page+1%>" class="prev">&laquo; previous</a>
+<% end %>
+<% if @has_next %>
+  <a href="/<%=@category%>/<%=@page-1%>" class="next">next &raquo;</a>
+<% end %>

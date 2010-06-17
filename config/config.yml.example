@@ -1,0 +1,23 @@
+# can create your password hash with 
+# irb
+# require 'digest/sha2'
+# Digest::SHA512.hexdigest("your password")
+
+development:
+  admin_username: todo
+  admin_password: todo
+  disqus_username: todo
+  
+test:
+  admin_username: todo
+  admin_password: todo
+  disqus_username: todo
+  
+production:
+  admin_username: todo
+  admin_password: todo
+  disqus_user: todo
+  db_server: localhost
+  db_name: todo
+  db_user: todo
+  db_password: todo

@@ -1,0 +1,19 @@
+<div class="section">
+  <a href="/adnim/view/0">new post</a>
+</div>
+
+<div class="section">
+  <% @posts.each do |p| %>
+    <a href="/adnim/view/<%=p.id%>" class="admin"><%= p.title %></a>
+  <% end %>
+</div>
+
+
+<div class="section">
+  <% if @posts.length > 0 %>
+  <a href="/adnim/index/<%= @page + 1 %>" class="prev">&laquo; previous</a>
+  <% end %>
+  <% if @page > 1 %>
+    <a href="/adnim/index/<%= @page - 1 %>" class="next">next &raquo;</a>
+  <% end %>
+</div>

@@ -1,0 +1,30 @@
+<% content_for :meta do %><%= h(@post.summary) %><% end -%>
+<% content_for :head do %><%= javascript_include_tag 'shCore.js' %>
+<%= stylesheet_link_tag 'shcore' %><% end -%>
+<div class="section">
+  <h1><%= @post.title%></h1>
+  <div class="date"><%= @post.created_at.to_formatted_s(:pretty)%></div>
+  <div class="summary"><%= @post.summary %></div>
+  <div class="body"><%= @post.body %></div>
+</div>
+
+<div class="section">
+  <%= link_to_post(@previous, 'prev')%>
+  <%= link_to_post(@next, 'next')%>
+</div>
+
+<div class="section">
+  <div id="disqus_thread"></div> 
+  <a href="http://disqus.com" class="dsq-brlink attribution">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script type="text/javascript">
+  SyntaxHighlighter.all();
+  var disqus_identifier = <%= @post.id %>;
+  (function() {
+   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+   dsq.src = 'http://<%= Configuration.disqus_username %>.disqus.com/embed.js';
+   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=<%= Configuration.disqus_username %>">comments powered by Disqus.</a></noscript>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en-US" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <title>Karl Seguin's Blog</title>
+   <meta name="description" content="<%= yield :meta %>" />
+   <%= stylesheet_link_tag 'main' %>
+   <link rel="shortcut icon" href="/favicon.ico" />
+   <link href="http://feeds.feedburner.com/KarlSeguinsBlog" rel="alternate" type="application/atom+xml" />
+   <%= yield :head %>
+</head>
+<body>
+   <div id="site">
+      <div id="header">
+        <a href="http://feeds.feedburner.com/KarlSeguinsBlog"><%= image_tag('rss.png', :size => '32x32', :alt => 'rss', :id => 'rss') %></a>
+      </div>
+      <div id="content">
+        <%= yield %>
+      </div>
+   
+      <div id="right">
+        <% if session[:user] != nil %>
+          <div class="section">
+            <%= link_to 'logout', :controller => 'adnim', :action => 'logout' %>
+          </div>
+        <% end %>
+         <div class="section">
+            <h3>categories</h3>
+            <ul>
+                <li><a href="/">all</a></li>
+                <% cache ('all_categories') do%>
+                  <% get_all_categories.each do |c| %>
+                    <li><a href="/<%=u(c.name)%>"><%= c.name %></a></li>
+                  <% end %>
+                <% end %>
+            </ul>
+         </div>
+         <div class="section">
+            <h3>reach</h3> 
+            <p>If you are interested in my programming work, check out my <a href="http://github.com/karlseguin">github profile</a>.</p>
+            <p><a href="http://twitter.com/karlseguin">Follow me on twitter</a>, but only if you are ok with a steady stream of ranting/complaining.</p>
+            <p>Or send <a href="mailto:karl@openmymind.net">me an email</a>, if thats more your cup of tea.</p>
+         </div>
+         <div class="section">
+            <h3>about</h3> 
+            <p>Hi, I'm Karl Seguin - a Canadian born software developer with a strong focus on quality and continuous improvement. I'm an advocate of using the right tool for the job, which means being willing to try new things as well as accepting and learning from failure.</p>
+            <p>Lately I've had an itch to lead a simpler life; to become a more conscientious consumer. I'm pretty certain that our constant need and sense of entitlement is poisoning our souls, dumbing our minds and breaking our bodies.</p>
+         </div>
+         <div class="attribution">
+          header image by <a href="http://flickr.com/photos/24471966@N04">Brent Nelson</a>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<% form_tag('/adnim/save_post') do %>
+  <%= hidden_field :post, :id %>
+  <div>
+    <label>title</label>
+    <%= text_field :post, :title %>
+  </div>
+  <div>
+    <label>slug</label>
+    <%= text_field :post, :slug %>
+  </div>
+  <div>
+    <label>category</label>
+    <%= select :post, :category_id, get_all_categories.map{|c| [c.name, c.id]} << ['new', -1], {:include_blank => true} %>
+    <input type="text" name="new_category" id="new_category" />
+  </div>
+  <div>
+    <label>summary</label>
+    <span class="charCounter"></span>
+    <%= text_area :post, :summary, :cols => 65, :rows => 5 %>
+  </div>
+  <div>
+    <label>body</label>
+    <%= text_area :post, :body, :cols => 65, :rows => 30 %>
+  </div>
+  <input type="submit" value="save">
+<% end %>
+
+<% if @post.id != nil && @post.id > 0 %>
+<a href="/adnim/delete/<%=@post.id%>" onclick="return confirm('are you sure?')">delete</a>
+<% end %>
+
+<script type="text/javascript">
+$(document).ready(function()
+{
+  var $slug = $('#post_slug');
+  $('#post_title').blur(function()
+  {
+    if ($slug.val() == '')
+    {
+      $slug.val(this.value.replace(/ /g, '-').substring(0, 50));
+    }
+  });
+  
+  var $category = $('#post_category_id');
+  var $newCategory = $('#new_category').hide();
+  $category.change(function()
+  {
+    if ($category.val() == -1)
+    {
+      $newCategory.show().focus();
+    }
+    else
+    {
+      $newCategory.val('').hide();
+    }
+  });
+  
+  $('#post_summary').charCount(500);
+  $('form').submit(function()
+  {
+    if ($category.val() == '')
+    {
+      alert('missing category')
+      $category.focus();
+      return false;
+    }
+    if ($category.val() == '-1' && $newCategory.val() == '')
+    {
+      alert('missing category')
+      $newCategory.focus();
+      return false;
+    }
+  })
+  
+})
+</script>

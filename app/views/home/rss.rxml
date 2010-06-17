@@ -1,0 +1,19 @@
+xml.instruct!
+
+xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
+ xml.channel do
+   xml.title       "Karl Seguin's Blog"
+   xml.link        "http://openmymind.net/"
+   xml.description "coding and life"
+
+   @posts.each do |post|
+     xml.item do
+       xml.title       post.title
+       xml.link        "http://openmymind.net#{url_to_post(post)}"
+       xml.description post.summary
+       xml.guid        url_to_post post
+     end
+   end
+
+ end
+end
