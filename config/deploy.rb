@@ -1,9 +1,8 @@
 set :application, "Karl Seguin's Blog"
-set :repository,  "git@mogade.unfuddle.com:mogade/blog.git"
+set :repository,  "http://github.com/karlseguin/MyLittleBlog.git"
 
 set :scm, :git
 set :branch, 'master'
-ssh_options[:forward_agent] = true
 
 set :deploy_via, :remote_cache
 set :deploy_to, "/srv/www/openmymind/"
