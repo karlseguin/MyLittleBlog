@@ -1,16 +1,13 @@
 class Post < ActiveRecord::Base
   has_one :category
   
-  def self.find_summary(page, limit, category_name)
+  def self.find_summary(page, limit, category_id)
     conditions = []
     arguments = {}
     
-    if category_name != 'all' 
-      category = Category.find(:first, :conditions => { :name => category_name.downcase })
-      if category != nil
-        conditions << ['category_id = :category_id']
-        arguments[:category_id] = category.id      
-      end
+    if category_id != 0 
+      conditions << ['category_id = :category_id']
+      arguments[:category_id] = category_id      
     end
     
     Post.find :all, 
