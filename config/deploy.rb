@@ -1,5 +1,5 @@
 set :application, "Karl Seguin's Blog"
-set :repository,  "git://github.com/karlseguin/MyLittleBlog.git"
+set :repository,  "http://github.com/karlseguin/MyLittleBlog.git"
 
 set :scm, :git
 set :branch, 'master'
