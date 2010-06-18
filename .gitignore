@@ -3,4 +3,3 @@ tmp/**/*
 doc/api
 doc/app
 config/config.yml
-config/deploy.rb
