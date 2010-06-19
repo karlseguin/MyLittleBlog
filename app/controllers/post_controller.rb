@@ -1,6 +1,7 @@
 class PostController < ApplicationController
   caches_action :view, 
-                :cache_path => Proc.new{|c| c.params}
+                :cache_path => Proc.new{|c| c.params},
+                :unless =>Proc.new{|c| c.is_logged_in?}
   
   def view
     response.headers["Expires"] = "#{10.minutes.from_now}"

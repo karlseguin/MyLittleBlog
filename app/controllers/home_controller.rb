@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  caches_action :index, :cache_path => Proc.new{|c| c.params}
+  caches_action :index, :cache_path => Proc.new{|c| c.params}, :unless => Proc.new{|c| c.is_logged_in?}
   caches_action :rss, :expires_in => 1.day
   
   def index

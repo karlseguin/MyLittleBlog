@@ -22,7 +22,7 @@ class AuthenticatedController < ApplicationController
   
   private
     def authenticate
-      if session[:user].nil?
+      if !is_logged_in?
         redirect_to :controller => 'adnim', :action => 'login'
       end
     end
