@@ -4,7 +4,7 @@ class AdnimController < AuthenticatedController
   def index
     @page = params[:page].to_i
     @page = 1 if @page == 0
-    @posts = Post.find_summary(@page, 20, 'all')
+    @posts = Post.find_summary(@page, 20, 0)
   end
   
   def view
