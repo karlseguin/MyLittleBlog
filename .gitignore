@@ -3,3 +3,4 @@ tmp/**/*
 doc/api
 doc/app
 config/config.yml
+db/*.sqlite3
