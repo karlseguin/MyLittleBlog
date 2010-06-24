@@ -37,7 +37,7 @@ $(document).ready(function()
   {
     if ($slug.val() == '')
     {
-      $slug.val(this.value.replace(/ /g, '-').replace(/I'm/, 'i-am').substring(0, 50));
+      $slug.val(this.value.replace(/[ \.,]/g, '-').replace(/I'm/, 'i-am').substring(0, 50));
     }
   });
   
