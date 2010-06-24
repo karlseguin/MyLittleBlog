@@ -224,5 +224,3 @@ SyntaxHighlighter.brushes.CSS.prototype	= new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.CSS.aliases	= ['css'];
 SyntaxHighlighter.brushes.CSharp.prototype	= new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.CSharp.aliases	= ['c#', 'c-sharp', 'csharp'];
-
-
