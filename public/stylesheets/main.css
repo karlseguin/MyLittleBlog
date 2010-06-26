@@ -4,6 +4,7 @@ h1{font-size:1.65em;font-variant:small-caps;margin:0;}
 h3{margin:0;font-size:1.1em;}
 ul{margin:0;padding:0;}
 li{list-style:none;margin:0;padding:0;}
+blockquote{border-left:3px solid #ccc;color:#777;margin-left:10px;padding-left:10px;}
 p{margin-top:0;}
 label{display:block;}
 input[type="password"], input[type="text"]{padding:5px;width:400px;}

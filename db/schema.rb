@@ -24,4 +24,7 @@ ActiveRecord::Schema.define(:version => 20100609223704) do
     t.datetime "created_at"
   end
 
+  add_index "posts", ["created_at", "category_id"], :name => "index_posts_on_created_at_and_category_id", :unique => true
+  add_index "posts", ["slug"], :name => "index_posts_on_slug", :unique => true
+
 end
