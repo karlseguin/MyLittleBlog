@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html lang="en-US" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-   <title>Karl Seguin's Blog<%= yield :title %></title>
+   <title><%= (out=yield :title) ? out : "Karl Seguin's Blog" %></title>
    <meta name="description" content="<%= yield :meta %>" />
    <%= stylesheet_link_tag 'main' %>
    <link rel="shortcut icon" href="/favicon.ico" />
