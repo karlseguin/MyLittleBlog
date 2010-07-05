@@ -214,6 +214,12 @@ SyntaxHighlighter.brushes.JScript = function()
 	this.forHtmlScript(SyntaxHighlighter.regexLib.scriptScriptTags);
 };
 
+SyntaxHighlighter.brushes.Plain = function()
+{
+};
+
+SyntaxHighlighter.brushes.Plain.prototype = new SyntaxHighlighter.Highlighter();
+SyntaxHighlighter.brushes.Plain.aliases = ['text', 'plain'];
 SyntaxHighlighter.brushes.JScript.prototype	= new SyntaxHighlighter.Highlighter();
 SyntaxHighlighter.brushes.JScript.aliases	= ['js', 'jscript', 'javascript'];
 SyntaxHighlighter.brushes.Xml.prototype	= new SyntaxHighlighter.Highlighter();

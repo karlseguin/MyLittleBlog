@@ -1,3 +1,4 @@
+<% content_for :title do %><%= h(@post.title) %><% end -%>
 <% content_for :meta do %><%= h(@post.summary) %><% end -%>
 <% content_for :head do %><%= javascript_include_tag 'shCore.js' %>
 <%= stylesheet_link_tag 'shcore' %><% end -%>
