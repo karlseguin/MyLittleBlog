@@ -11,7 +11,7 @@
 </head>
 <body>
   <div id="header">
-		<div id="title">Hello.</div>
+		<div id="title">Hello. <span>My name is Karl and this is my blog.</span></div>
     <a href="http://feeds.feedburner.com/KarlSeguinsBlog"><%= image_tag('rss.png', :size => '32x32', :alt => 'rss', :id => 'rss') %></a>
   </div>
    <div id="site">
@@ -44,7 +44,11 @@
    </div>
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#left').hover(function() { $(this).toggleClass('over');});
+	$('#left').hover(function() 
+	{ 
+		$(this).toggleClass('over');
+		$('#title span').toggle();
+	});
 });
 </script>
 </body>

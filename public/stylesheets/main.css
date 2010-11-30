@@ -18,6 +18,7 @@ h1 a{color:#222;}
 #site, #header{width:95%;margin:0 auto;}
 #header{height:150px;margin-bottom:2px;position:relative;}
 #title{font-size:2.5em;position:absolute;top:50px;left:100px;}
+#title span{display:none;}
 #rss{float:right;position:relative;top:10px;}
 #content{margin-left:300px;position:relative;}
 
