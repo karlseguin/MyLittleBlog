@@ -10,7 +10,7 @@ module ApplicationHelper
         title += ' &raquo;'
     end
     
-    link_to title, url_to_post(post), :class => className
+    link_to title.html_safe, url_to_post(post), :class => className
   end
   
   def url_to_post(post)

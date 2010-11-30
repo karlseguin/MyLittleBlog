@@ -12,12 +12,14 @@ form > div{margin-bottom:15px;}
 a{color:#004A7F;}
 a:focus { outline: none; }
 h1 a{color:#222;}
+#left a, a.special{text-decoration:none;border:1px solid #f0f0f0;background:#f6f6f6;padding:5px;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;line-height:30px;}
+
 
 #site, #header{width:95%;margin:0 auto;}
 #header{height:150px;margin-bottom:2px;position:relative;}
 #title{font-size:2.5em;position:absolute;top:50px;left:100px;}
-#rss{float:right;position:relative;top:120px;}
-#content{margin-left:300px;}
+#rss{float:right;position:relative;top:10px;}
+#content{margin-left:300px;position:relative;}
 
 #left{padding:20px;width:220px;float:left;color:#fff;}
 #left.over{color:#444;}
@@ -25,6 +27,7 @@ h1 a{color:#222;}
 #left li a:hover{background:#B3DCFC;color:#444;}
 #left ul{margin:0;padding:0;}
 #left li{list-style:none;margin:0;padding:0;}
+#home{position:absolute;right:0px;}
 
 .date{color:#777;margin-bottom:10px;}
 .section{margin-bottom:20px;overflow:auto;}

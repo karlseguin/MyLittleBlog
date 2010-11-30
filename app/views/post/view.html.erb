@@ -6,12 +6,12 @@
   <h1><%= @post.title%></h1>
   <div class="date"><%= @post.created_at.to_formatted_s(:pretty)%></div>
   <div class="summary"><%= @post.summary %></div>
-  <div class="body"><%= @post.body %></div>
+  <div class="body"><%= @post.body.html_safe %></div>
 </div>
 
 <div class="section">
-  <%= link_to_post(@previous, 'prev')%>
-  <%= link_to_post(@next, 'next')%>
+  <%= link_to_post(@previous, 'prev').html_safe %>
+  <%= link_to_post(@next, 'next').html_safe %>
 </div>
 
 <div class="section">

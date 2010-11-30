@@ -2,9 +2,9 @@ source 'http://rubygems.org'
   
 gem 'rails', '3.0.1'
 gem 'erubis'
-gem 'sqlite3-ruby'
 
 group :development do  
+	gem 'sqlite3-ruby'
   gem 'rspec', '>= 2.0.0.beta.22'
   gem 'rspec-rails', '>= 2.0.0.beta.22'
 	gem 'cucumber'

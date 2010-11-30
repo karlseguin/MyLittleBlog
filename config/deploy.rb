@@ -21,5 +21,6 @@ namespace :deploy do
     run "touch #{deploy_to}current/tmp/restart.txt"
     
     run "ln -nfs #{deploy_to}/shared/config/config.yml #{release_path}/config/config.yml"
+    run "ln -nfs #{deploy_to}/shared/config/initializers/secret_token.rb #{release_path}/config/initializers/secret_token.rb"
   end
 end

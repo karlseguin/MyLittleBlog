@@ -23,13 +23,13 @@
         <% end %>
          <div class="section">
             <h3>reach</h3> 
-            <p>If you are interested in my programming work, check out my <a href="http://github.com/karlseguin">github profile</a>.</p>
+            <p>If you are interested in my programming work, check out <a href="http://github.com/karlseguin">my github profile</a>.</p>
             <p><a href="http://twitter.com/karlseguin">Follow me on twitter</a>, but only if you are ok with a steady stream of ranting/complaining.</p>
             <p>Or <a href="mailto:karl@openmymind.net">send me an email</a>, if thats more your cup of tea.</p>
          </div>
          <div class="section">
            <h3>lately</h3>
-           <p>I've been working on a <a href="http://mogade.com.com">my platform for casual game developers</a></p>
+           <p>I've been working on a <a href="http://mogade.com.com">my platform for game devs</a></p>
          </div>
          <div class="section">
             <h3>about</h3> 
@@ -38,12 +38,13 @@
          </div>
       </div>
       <div id="content">
+				<a id="home" class="special" href="/">home</a>
         <%= yield %>
       </div>
    </div>
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#left').hover(function(){$(this).toggleClass('over');});
+	$('#left').hover(function() { $(this).toggleClass('over');});
 });
 </script>
 </body>
