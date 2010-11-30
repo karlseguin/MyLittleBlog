@@ -18,7 +18,7 @@ Given /^a bunch of posts exist$/ do
   Given %{a category exists with name: "category 1"}
   Given %{a category exists with name: "category 2"}
   Given %{a category exists with name: "category 3"}
-  table = Cucumber::Ast::Table.parse <<-eos
+  data = <<-eos
   | slug        | title     | summary       | created_at | category_id | body     |
   | post-1      | a post 1  | a summary 1   | 2010-01-05 | 1           | body 1   |
   | post-2      | a post 2  | a summary 2   | 2010-01-10 | 1           | body 2   |
@@ -37,16 +37,18 @@ Given /^a bunch of posts exist$/ do
   | post-15     | a post 15 | a summary 15  | 2010-01-31 | 3           | body 15  |
   | post-16     | a post 16 | a summary 16  | 2010-02-01 | 1           | body 16  |
   eos
-    create_models_from_table('posts', table)
+  table = Cucumber::Ast::Table.parse(data,nil, nil)
+  create_models_from_table('posts', table)
 end
 
 Given /^some posts exist$/ do
-    table = Cucumber::Ast::Table.parse <<-eos
-  | slug        | title     | summary       | created_at | category_id | body     |
-  | post-1      | a post 1  | a summary 1   | 2010-01-05 | 1           | body 1   |
-  | post-2      | a post 2  | a summary 2   | 2010-01-10 | 1           | body 2   |
-  | post-3      | a post 3  | a summary 3   | 2010-01-15 | 1           | body 3   |
-  | post-4      | a post 4  | a summary 4   | 2010-01-20 | 1           | body 4   |
-  eos
+  data = <<-eos
+| slug        | title     | summary       | created_at | category_id | body     |
+| post-1      | a post 1  | a summary 1   | 2010-01-05 | 1           | body 1   |
+| post-2      | a post 2  | a summary 2   | 2010-01-10 | 1           | body 2   |
+| post-3      | a post 3  | a summary 3   | 2010-01-15 | 1           | body 3   |
+| post-4      | a post 4  | a summary 4   | 2010-01-20 | 1           | body 4   |
+eos
+    table = Cucumber::Ast::Table.parse(data, nil, nil)
     create_models_from_table('posts', table)
 end

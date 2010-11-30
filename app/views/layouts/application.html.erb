@@ -9,10 +9,10 @@
    <%= yield :head %>
 </head>
 <body>
+  <div id="header">
+    <a href="http://feeds.feedburner.com/KarlSeguinsBlog"><%= image_tag('rss.png', :size => '32x32', :alt => 'rss', :id => 'rss') %></a>
+  </div>
    <div id="site">
-      <div id="header">
-        <a href="http://feeds.feedburner.com/KarlSeguinsBlog"><%= image_tag('rss.png', :size => '32x32', :alt => 'rss', :id => 'rss') %></a>
-      </div>
       <div id="content">
         <%= yield %>
       </div>
@@ -27,7 +27,7 @@
             <h3>categories</h3>
             <ul>
                 <li><a href="/">all</a></li>
-                <% cache ('all_categories') do%>
+                <% cache('all_categories') do%>
                   <% get_all_categories.each do |c| %>
                     <li><a href="/<%=u(c.name)%>"><%= c.name %></a></li>
                   <% end %>

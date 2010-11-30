@@ -18,7 +18,7 @@ class HomeController < ApplicationController
   
   def rss
     response.headers["Expires"] = "#{10.minutes.from_now}"
-    @posts = Post.find(:all, :order => 'created_at desc', :limit => 10)
+    @posts = Post.all(:order => 'created_at desc', :limit => 10)
     render :layout => false
     response.headers["Content-Type"] = "application/xml; charset=utf-8"
   end

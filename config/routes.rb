@@ -1,10 +1,11 @@
-ActionController::Routing::Routes.draw do |map|
-  map.root :controller => 'home', :action => 'index'
+OpenMyMind::Application.routes.draw do
   
-  map.connect '/adnim/index/:page', :controller => 'adnim', :action => 'index', :page => 1
-  map.connect '/adnim/:action/:id', :controller => 'adnim'
+  match '/adnim/index/:page' => 'adnin#index'
+#  match '/adnim/:action/:id' => 'adnin' :controller => 'adnim'
   
-  map.connect '/rss', :controller => 'home', :action => 'rss'
-  map.connect ':year/:month/:day/:slug', :controller => 'post', :action => 'view'
-  map.connect '/:category/:page', :controller => 'home', :action => 'index', :category => 'all', :page => 1
+  match '/rss' => 'home#rss'
+  match ':year/:month/:day/:slug' => 'post#view'
+  match'/:category/:page' => 'home#index'
+  
+  root :to => 'home#index'
 end

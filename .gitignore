@@ -2,5 +2,12 @@ log/*.log
 tmp/**/*
 doc/api
 doc/app
+all.js
+all.css
+all.js.gz
+all.css.gz
 config/config.yml
+vendor/gems/
+.bundle
 db/*.sqlite3
+config/initializers/secret_token.rb

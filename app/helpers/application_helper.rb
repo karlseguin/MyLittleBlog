@@ -19,6 +19,6 @@ module ApplicationHelper
   end
   
   def get_all_categories
-    Category.find(:all, :order => 'name')
+    Category.all(:order => 'name')
   end
 end

@@ -1,4 +1,4 @@
-<% form_tag('/adnim/save_post') do %>
+<%= form_tag('/adnim/save_post') do -%>
   <%= hidden_field :post, :id %>
   <div>
     <label>title</label>
@@ -23,7 +23,7 @@
     <%= text_area :post, :body, :cols => 60, :rows => 30 %>
   </div>
   <input type="submit" value="save">
-<% end %>
+<% end -%>
 
 <% if @post.id != nil && @post.id > 0 %>
 <a href="/adnim/delete/<%=@post.id%>" onclick="return confirm('are you sure?')">delete</a>

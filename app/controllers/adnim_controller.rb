@@ -40,7 +40,7 @@ class AdnimController < AuthenticatedController
   
   private
     def clear_cache
-      FileUtils.touch(RAILS_ROOT + '/tmp/restart.txt')
+      FileUtils.touch(Rails.root + '/tmp/restart.txt')
     end
 
 end

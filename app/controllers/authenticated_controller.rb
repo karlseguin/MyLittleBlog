@@ -2,7 +2,6 @@ require 'digest/sha2'
 
 class AuthenticatedController < ApplicationController
   before_filter :authenticate, :except => [:login, :do_login, :logout]
-  filter_parameter_logging :password
   
   def login
   end

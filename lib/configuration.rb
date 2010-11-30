@@ -1,6 +1,6 @@
 class Configuration 
   
-  @@settings = YAML::load_file('config/config.yml')[RAILS_ENV]
+  @@settings = YAML::load_file('config/config.yml')[Rails.env]
   
   class MissingConfigOptionError < StandardError; 
   end 
