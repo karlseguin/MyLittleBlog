@@ -1,7 +1,8 @@
 <% content_for :title do %><%= h(@post.title) %><% end -%>
 <% content_for :meta do %><%= h(@post.summary) %><% end -%>
-<% content_for :head do %><%= javascript_include_tag 'shCore.js' %>
-<%= stylesheet_link_tag 'shcore' %><% end -%>
+<% content_for :head do %><%= stylesheet_link_tag 'shcore' %>
+	<%= javascript_include_tag 'shCore' %>
+<% end -%>
 <div class="section">
   <h1><%= @post.title%></h1>
   <div class="date"><%= @post.created_at.to_formatted_s(:pretty)%></div>
@@ -20,13 +21,24 @@
 </div>
 
 <script type="text/javascript">
-  SyntaxHighlighter.defaults['wrap-lines'] = false;
-  SyntaxHighlighter.all();
-  var disqus_identifier = <%= @post.id %>;
-  (function() {
-   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-   dsq.src = 'http://<%= Configuration.disqus_username %>.disqus.com/embed.js';
-   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
+$(document).ready(function(){
+	SyntaxHighlighter.defaults['wrap-lines'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.autoloader(
+	  'c# csharp  /javascripts/shBrushCSharp.js',
+	  'css  /javascripts/shBrushCss.js',
+	  'js  /javascripts/shBrushJScript.js',
+	  'plain text  /javascripts/shBrushPlain.js',
+	  'ruby rails  /javascripts/shBrushRuby.js',
+	  'xml html xhtml  /javascripts/shBrushXml.js'
+	);
+	SyntaxHighlighter.all();
+});
+var disqus_identifier = <%= @post.id %>;
+(function() {
+ var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+ dsq.src = 'http://<%= Configuration.disqus_username %>.disqus.com/embed.js';
+ (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=<%= Configuration.disqus_username %>">comments powered by Disqus.</a></noscript>
