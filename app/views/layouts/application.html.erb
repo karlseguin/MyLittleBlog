@@ -12,45 +12,25 @@
 </head>
 <body>
   <div id="header">
-		<div id="title">Hello. <span>My name is Karl and this is my blog.</span></div>
+		<div id="title">Hello.</div>
     <a href="http://feeds.feedburner.com/KarlSeguinsBlog"><%= image_tag('rss.png', :size => '32x32', :alt => 'rss', :id => 'rss') %></a>
   </div>
    <div id="site">
       <div id="left">
-        <% if session[:user] != nil %>
-          <div class="section">
-            <%= link_to 'logout', :controller => 'adnim', :action => 'logout' %>
-          </div>
-        <% end %>
          <div class="section">
-            <h3>reach</h3> 
-            <p>If you are interested in my programming work, check out <a href="http://github.com/karlseguin">my github profile</a>.</p>
-            <p><a href="http://twitter.com/karlseguin">Follow me on twitter</a>, but only if you are ok with a steady stream of ranting/complaining.</p>
-            <p>Or <a href="mailto:karl@openmymind.net">send me an email</a>, if thats more your cup of tea.</p>
-         </div>
-         <div class="section">
-           <h3>lately</h3>
-           <p>Do check out <a href="http://mogade.com.com">my platform for game devs</a></p>
-         </div>
-         <div class="section">
-            <h3>about</h3> 
-            <p>Hi, I'm Karl Seguin - a Canadian born software developer living in Hong Kong. I have a strong focus on quality and continuous improvement. I'm an advocate of using the right tool for the job, which means being willing to try new things as well as accepting and learning from failure.</p>
-            <p>Lately I've had an itch to lead a simpler life; to become a more conscientious consumer. I'm pretty certain that our constant need and sense of entitlement is poisoning our souls, dumbing our minds and breaking our bodies.</p>
+		        <% if session[:user] != nil -%>
+						<p><%= link_to 'logout', :controller => 'adnim', :action => 'logout' %></p>
+						<% end -%>
+            <p><a href="/">home</a></p>
+            <p><a href="http://github.com/karlseguin">my github profile</a></p>
+            <p><a href="http://twitter.com/karlseguin">Follow me on twitter</a></p>
+            <p><a href="mailto:karl@openmymind.net">send me an email</a></p>
+	          <p><a href="http://mogade.com.com">my platform for devs</a></p>
          </div>
       </div>
       <div id="content">
-				<a id="home" class="special" href="/">home</a>
         <%= yield %>
       </div>
    </div>
-<script type="text/javascript">
-$(document).ready(function(){
-	$('#left').hover(function() 
-	{ 
-		$(this).toggleClass('over');
-		$('#title span').toggle();
-	});
-});
-</script>
 </body>
 </html>
