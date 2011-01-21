@@ -8,6 +8,7 @@ label{display:block;}
 input[type="password"], input[type="text"]{padding:5px;width:600px;}
 form{width:700px;margin:10px auto;}
 form > div{margin-bottom:15px;}
+code{background: #f6f6f6; border: 1px solid #eee; font-size: 1.2em; padding: 2px;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;}
 
 a{color:#004A7F;}
 a:focus { outline: none; }
