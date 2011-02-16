@@ -8,7 +8,7 @@ label{display:block;}
 input[type="password"], input[type="text"]{padding:5px;width:600px;}
 form{width:700px;margin:10px auto;}
 form > div{margin-bottom:15px;}
-code{background: #f6f6f6; border: 1px solid #eee; font-size: 1.2em; padding: 2px;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;}
+code{background: #f6f6f6; border: 1px solid #eee; font-size: 0.95em; font-family:menlo,consolas,'courier new';padding: 2px;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;}
 
 a{color:#004A7F;}
 a:focus { outline: none; }
@@ -33,8 +33,8 @@ h1 a{color:#222;}
 
 .date{color:#777;margin-bottom:10px;}
 .section{margin-bottom:20px;overflow:auto;}
-.summary{font-size:1.4em;color:#555;padding-bottom:20px;}
-.body{margin:10px 0 15px 0;padding:25px 0;line-height:1.5em;}
+.summary{font-size:1.4em;color:#555;padding-bottom:5px;}
+.body{margin:5px 0 15px 0;padding:25px 0;line-height:1.5em;}
 .clear{clear:both;}
 .prev{float:left;width:45%;}
 .next{float:right;width:45%;text-align:right;}
