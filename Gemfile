@@ -2,6 +2,7 @@ source 'http://rubygems.org'
   
 gem 'rails', '3.0.1'
 gem 'erubis'
+gem 'mysql', '2.8.1'
 
 group :development do  
 	gem 'sqlite3-ruby'

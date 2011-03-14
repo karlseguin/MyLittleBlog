@@ -5,31 +5,27 @@
    <meta name="description" content="<%= yield :meta %>" />
    <%= stylesheet_link_tag 'main' %>
    <link rel="shortcut icon" href="/favicon.ico" />
-   <link href="http://feeds.feedburner.com/KarlSeguinsBlog" rel="alternate" type="application/atom+xml" />
-	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
-   <%= yield :head %>
+   <link href="//feeds.feedburner.com/KarlSeguinsBlog" rel="alternate" type="application/atom+xml" />
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
+   <%= yield :head -%>
 </head>
 <body>
   <div id="header">
-		<div id="title">Hello.</div>
-    <a href="http://feeds.feedburner.com/KarlSeguinsBlog"><%= image_tag('rss.png', :size => '32x32', :alt => 'rss', :id => 'rss') %></a>
+    <div id="title">Hello.</div>
+    <a href="//feeds.feedburner.com/KarlSeguinsBlog"><%= image_tag('rss.png', :size => '32x32', :alt => 'rss', :id => 'rss') %></a>
   </div>
    <div id="site">
       <div id="left">
-         <div class="section">
-		        <% if session[:user] != nil -%>
-						<p><%= link_to 'logout', :controller => 'adnim', :action => 'logout' %></p>
-						<% end -%>
-            <p><a href="/">home</a></p>
-            <p><a href="http://github.com/karlseguin">my github profile</a></p>
-            <p><a href="http://twitter.com/karlseguin">follow me on twitter</a></p>
-            <p><a href="mailto:karl@openmymind.net">send me an email</a></p>
-	          <p><a href="http://mogade.com">my platform for devs</a></p>
-         </div>
+        <% if session[:user] != nil -%>
+        <p><%= link_to 'logout', :controller => 'adnim', :action => 'logout' %></p>
+        <% end -%>
+        <p><a href="/">home</a></p>
+        <p><a href="//github.com/karlseguin">my github profile</a></p>
+        <p><a href="//twitter.com/karlseguin">follow me on twitter</a></p>
+        <p><a href="mailto:karl@openmymind.net">send me an email</a></p>
+        <p><a href="//mogade.com">my mogade project</a></p>
       </div>
-      <div id="content">
-        <%= yield %>
-      </div>
+      <div id="content"><%= yield -%></div>
    </div>
 </body>
 </html>

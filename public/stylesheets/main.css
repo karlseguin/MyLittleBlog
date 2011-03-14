@@ -11,7 +11,6 @@ form > div{margin-bottom:15px;}
 code{background: #f6f6f6; border: 1px solid #eee; font-size: 0.95em; font-family:menlo,consolas,'courier new';padding: 2px;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;}
 
 a{color:#004A7F;}
-a:focus { outline: none; }
 h1 a{color:#222;}
 #left a, a.special{text-decoration:none;border:1px solid #f0f0f0;background:#f6f6f6;padding:5px;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;line-height:30px;}
 #left a:hover, a.special:hover{background:#e6e6e6;border:1px solid #ccc;}
@@ -25,15 +24,12 @@ h1 a{color:#222;}
 #content{margin-left:300px;position:relative;}
 
 #left{padding:20px;width:220px;float:left;color:#fff;}
-#left.over{color:#444;}
-#left li a{text-decoration:none;display:block;padding:5px 0;height:20px;}
-#left li a:hover{background:#B3DCFC;color:#444;}
-#left ul{margin:0;padding:0;}
-#left li{list-style:none;margin:0;padding:0;}
 
-.date{color:#777;margin-bottom:10px;}
-.section{margin-bottom:20px;overflow:auto;}
-.summary{font-size:1.4em;color:#555;padding-bottom:5px;}
+
+.summary div{font-size:1.4em;color:#555;padding-bottom:5px;}
+.summary span{color:#777;margin-bottom:10px;}
+.section, .summary{margin-bottom:20px;overflow:auto;}
+
 .body{margin:5px 0 15px 0;padding:25px 0;line-height:1.5em;}
 .clear{clear:both;}
 .prev{float:left;width:45%;}
