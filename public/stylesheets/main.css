@@ -1,6 +1,6 @@
 html,body{padding:0;margin:0;font-family:Verdana,Arial;background:#fff;}
 img{border:0;}
-h1{font-size:1.65em;font-variant:small-caps;margin:0;}
+h1{font-size:1.35em;margin:0;}
 h3{margin:0;font-size:1.1em;}
 blockquote{border-left:3px solid #ccc;color:#777;margin-left:10px;padding-left:10px;}
 p{margin-top:0;}
@@ -28,7 +28,7 @@ h1 a{color:#222;}
 
 .summary div{font-size:1.4em;color:#555;padding-bottom:5px;}
 .summary span{color:#777;margin-bottom:10px;}
-.section, .summary{margin-bottom:20px;overflow:auto;}
+.section, .summary{overflow:auto;}
 
 .body{margin:5px 0 15px 0;padding:25px 0;line-height:1.5em;}
 .clear{clear:both;}
