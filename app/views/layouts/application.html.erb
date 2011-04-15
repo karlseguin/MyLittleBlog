@@ -19,10 +19,10 @@
         <% if session[:user] != nil -%>
         <p><%= link_to 'logout', :controller => 'adnim', :action => 'logout' %></p>
         <% end -%>
+        <p><a href="/about">about</a></p>
         <p><a href="//github.com/karlseguin">on github</a></p>
         <p><a href="//twitter.com/karlseguin">at twitter</a></p>
         <p><a href="mailto:karl@openmymind.net">via email</a></p>
-        <p><a href="/about">about</a></p>
         <p><a href="/">home</a></p>
       </div>
       <div id="content"><%= yield -%></div>
