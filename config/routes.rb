@@ -4,6 +4,7 @@ OpenMyMind::Application.routes.draw do
   match '/adnim/(:action)(/:id)' => 'adnim'
   
   match '/rss' => 'home#rss'
+  match '/about' => 'home#about'
   match ':year/:month/:day/:slug' => 'post#view'
   match '/:category/(:page)' => 'home#index'
   

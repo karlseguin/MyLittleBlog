@@ -9,11 +9,14 @@ class HomeController < ApplicationController
     @category = params[:category] || 'all'
     category_id = Category.find_id(@category);
     
-    @posts = Post.find_summary(@page, 5, category_id)
+    @posts = Post.find_summary(@page, 7, category_id)
     render 'no_posts' and return if @posts == nil || @posts.length == 0
     
     @has_previous  = Post.exists? ['created_at < ? and (0 = ? or category_id = ?)', @posts.last.created_at, category_id, category_id]
     @has_next  = Post.exists? ['created_at > ? and (0 = ? or category_id = ?)', @posts.first.created_at, category_id, category_id]
+  end
+  
+  def about
   end
   
   def rss
